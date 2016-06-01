@@ -5,28 +5,38 @@ import java.nio.file.Paths;
 
 public class Main {
 
+    private static DoubleLinkedList<Edge> graph1 = new DoubleLinkedList<>();
+
 	public static void main(String[] args) {
-		DoubleLinkedList<Edge> graph1 = new DoubleLinkedList<Edge>();
-        initGraph(graph1, "graph.txt");
-        System.out.println(graph1);
+        readGraph("graph.txt");
+        System.out.println("unsortierte graph");
+        System.out.println(graph1.toString());
+        reversDelete();
+        System.out.println("sortierter graph");
+        System.out.println(graph1.toString());
+        
 	}
-	
-    public static void initGraph(List<Edge> list, String filename) {
-    	BufferedReader bufferedReader;
+
+    private static void readGraph(String filename){
+        BufferedReader bufferedReader;
         try {
             bufferedReader = Files.newBufferedReader(Paths.get(filename));
             String line; 
             String[] data;
             while ((line = bufferedReader.readLine()) != null) {
-                if (!line.equals("")) {
-                    data = line.split(";");
-                    list.insert(new Edge(data[0], data[1], data[2]));
-                }
+                data = line.split(";");
+                graph1.insert(new Edge(data[0], data[1], data[2]));
+
             }
             bufferedReader.close();
         } catch (IOException e) {
+            System.out.println("Datei im Pfad nicht gefunden.");
             e.printStackTrace();
             return;
         }
+    }
+
+    private static void reversDelete(){
+        
     }
 }

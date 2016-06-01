@@ -4,7 +4,7 @@ import java.util.function.Predicate;
  * Class for a circular double-ended list
  * @author Martin Appelmann 4685580 Group 2a 
  * @author Benjamin Effner 4633079 Group 2a
- @param <T> ein doppelt verkettetes Element der Liste
+ * @param <T> ein doppelt verkettetes Element der Liste
  */
 public class DoubleLinkedList<T extends Comparable<T>> implements List<T> { 
 
@@ -90,6 +90,7 @@ public class DoubleLinkedList<T extends Comparable<T>> implements List<T> {
             cur.next.prev = cur.prev;
         }
     }
+    
 	/**
      * Removes the element at the front position in this list. Returns the element that was removed from the list.
      * @return the element previously at the front position
@@ -100,11 +101,12 @@ public class DoubleLinkedList<T extends Comparable<T>> implements List<T> {
         cur.next.prev = cur.prev;
     	return cur.item;        
     }
+
     /**
-	prueft ob ein Objekt in einer liste ist
-	@param x das zu suchende Objekt
-	@return true wenn es enthalten ist
-	*/
+	 * prueft ob ein Objekt in einer liste ist
+	 * @param x das zu suchende Objekt
+	 * @return true wenn es enthalten ist
+	 */
     public boolean isInList(T x) {
     	DoubleLinkedList<T> cur = next;
     	if (x == null) {
@@ -119,16 +121,16 @@ public class DoubleLinkedList<T extends Comparable<T>> implements List<T> {
         return false;
     }
 	
-	
 	/**
-	fuegt alle Elemente einer Liste zu einer anderen zu. Die reihenfolge wird dabei umgedreht
-	@param list ist die zu kopierende liste
-	*/
+	 * fuegt alle Elemente einer Liste zu einer anderen zu. Die reihenfolge wird dabei umgedreht
+	 * @param list ist die zu kopierende liste
+	 */
     public void addAll(List<T> list) {
         for (int i = 1; i < list.length() + 1; i++) {
             this.insert(list.get(i));
         }
     }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -141,10 +143,10 @@ public class DoubleLinkedList<T extends Comparable<T>> implements List<T> {
     }
     
 	/**
-	Allgemeine Filterfunktion. Benutzt Predicatefunktionen.
-	@param predicate ist der angewendete Filter
-	@return gibt eine Liste aus
-	*/
+	 * Allgemeine Filterfunktion. Benutzt Predicatefunktionen.
+	 * @param predicate ist der angewendete Filter
+	 * @return gibt eine Liste aus
+	 */
     public List<T> filter(Predicate<T> predicate) {
     	DoubleLinkedList<T> list = new DoubleLinkedList<T>();
 		DoubleLinkedList<T> cur = next;
@@ -159,6 +161,4 @@ public class DoubleLinkedList<T extends Comparable<T>> implements List<T> {
     	}
 		return list;
     }
-
-    
 }
