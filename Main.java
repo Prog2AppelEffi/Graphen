@@ -37,6 +37,15 @@ public class Main {
     }
 
     private static void reversDelete(){
-        
+        int i = 1;
+
+        while (i < graph1.length()) {
+            System.out.println(i);
+            graph1.delete(graph1.get(i));
+            //if (edge.v1 is not connected to edge.v2){
+              // E[i] edge
+            //}
+            i++;
+        }
     }
 }
