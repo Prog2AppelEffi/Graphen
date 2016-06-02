@@ -29,6 +29,7 @@ public class Edge implements Comparable<Edge> {
 
 	@Override
 	public int compareTo(Edge tempEdge) {
+		//System.out.println(tempEdge);
 		if (tempEdge.getWeight() == this.getWeight()) {
             return 0;
         } else if (tempEdge.getWeight() < this.getWeight()) {
