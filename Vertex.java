@@ -1,6 +1,7 @@
 
-public class Vertex implements Comparable<Edge> {
+public class Vertex implements Comparable<Vertex> {
 	private String adjacent = "";
+	private int adjacentcount = 0;
 	private char vertex;
 	
 	public Vertex(String v){
@@ -38,9 +39,12 @@ public class Vertex implements Comparable<Edge> {
 	public char getVertex(){
 		return vertex;
 	}
+	public String toString(){
+		return vertex + ", " + adjacent;
+	}
 	
 	@Override
-	public int compareTo(Edge o) {
+	public int compareTo(Vertex v) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

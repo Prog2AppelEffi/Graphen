@@ -8,6 +8,7 @@ public class Main {
         
         System.out.println("unsortierte graph");
         System.out.println(graph.toString());
+        graph.reverseDelete();
         System.out.println("sortierter graph");
         System.out.println(graph.toString());
         
