@@ -1,20 +1,26 @@
 
 public class Edge implements Comparable<Edge> {
-	private char vertex1;
-	private char vertex2;
+	private Vertex vertex1;
+	private Vertex vertex2;
 	private int weight;
 	
-	public Edge(String v1, String v2, String w){
+	/*public Edge(String v1, String v2, String w){
 		vertex1 = v1.charAt(0);
 		vertex2 = v2.charAt(0);
 		weight = Integer.parseInt(w);
+	}*/
+	public Edge(Vertex vert1, Vertex vert2, String w){
+		vertex1 = vert1;
+		vertex2 = vert2;
+		weight = Integer.parseInt(w);
+		vertex1.makeAdjacent(vertex2);
 	}
 
-	public int getVertex1(){
+	public Vertex getVertex1(){
 		return vertex1;
 	}
 
-	public int getVertex2(){
+	public Vertex getVertex2(){
 		return vertex2;
 	}
 	
@@ -23,7 +29,7 @@ public class Edge implements Comparable<Edge> {
 	}
 
 	public String toString(){
-		return vertex1+ ";" + vertex2 + ";" + weight;
+		return vertex1.getVertex()+ ";" + vertex2.getVertex() + ";" + weight;
 	}
 
 
