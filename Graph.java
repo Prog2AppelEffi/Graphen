@@ -72,9 +72,9 @@ public class Graph{
         	return;
         }
         int i = 0;
-        
+        bubbleSort();
         while (i < edges.size() ){
-        	bubbleSort();
+        	
             Edge temp = edges.get(i);
             edges.get(i).getVertex1().removeAdjacent(edges.get(i).getVertex2());
             edges.get(i).getVertex2().removeAdjacent(edges.get(i).getVertex1());
@@ -84,7 +84,7 @@ public class Graph{
             if(!isConnected()){
             	temp.getVertex1().addAdjacent(temp.getVertex2());
                 temp.getVertex2().addAdjacent(temp.getVertex1());
-            	edges.add(temp);
+            	edges.add(i, temp);
             	i++;
             }
             
@@ -117,7 +117,7 @@ public class Graph{
     	return false;
     }
     
-    private boolean bfs(Vertex start, Vertex goal){
+    /*private boolean bfs(Vertex start, Vertex goal){
     	for (int i = 0; i < start.getAdjacent().size(); i++){
     		if( start.getAdjacent().get(i).compareTo(goal) == 1){
     			return true;
@@ -126,7 +126,7 @@ public class Graph{
     		}
     	}    	
     	return false;
-    }
+    }*/
 
     public void bubbleSort(){
         Edge temp;

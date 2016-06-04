@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Vertex implements Comparable<Vertex> {
 	private ArrayList<Vertex> adjacent = new ArrayList<Vertex>();
-	private int adjacentcount = 0;
 	private char vertex;
 	
 	public Vertex(String v){
