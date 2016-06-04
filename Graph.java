@@ -35,13 +35,11 @@ public class Graph{
     }
 	
 	public Vertex insertVertex(String data, String adj){
-		//System.out.print(vertices.size() + ":");
     	char a = data.charAt(0);
     	int i=0;
     	
         while (i < vertices.size()) {
         	if (vertices.get(i).getVertex() == a) {
-        		//System.out.print("\n");
                 return vertices.get(i);
 			}
             i++;
@@ -74,25 +72,17 @@ public class Graph{
         int i = 0;
         bubbleSort();
         while (i < edges.size() ){
-        	
             Edge temp = edges.get(i);
             edges.get(i).getVertex1().removeAdjacent(edges.get(i).getVertex2());
             edges.get(i).getVertex2().removeAdjacent(edges.get(i).getVertex1());
             edges.remove(i);
-            //System.out.println(temp.getVertex1().getVertex() + "-" +  temp.getVertex2().getVertex() + " wurde entfernt");
-            //System.out.println(isConnected());
             if(!isConnected()){
             	temp.getVertex1().addAdjacent(temp.getVertex2());
                 temp.getVertex2().addAdjacent(temp.getVertex1());
             	edges.add(i, temp);
             	i++;
             }
-            
-            
         }
-
-        
-        
     }
     
     public boolean isConnected(){
@@ -117,18 +107,7 @@ public class Graph{
     	return false;
     }
     
-    /*private boolean bfs(Vertex start, Vertex goal){
-    	for (int i = 0; i < start.getAdjacent().size(); i++){
-    		if( start.getAdjacent().get(i).compareTo(goal) == 1){
-    			return true;
-    		}else{
-    			return bfs(start.getAdjacent().get(i), goal);
-    		}
-    	}    	
-    	return false;
-    }*/
-
-    public void bubbleSort(){
+    private void bubbleSort(){
         Edge temp;
         for (int i = 0; i < edges.size(); i++) {
             for(int j = 0; j<edges.size(); j++){
