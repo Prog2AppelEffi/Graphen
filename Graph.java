@@ -5,8 +5,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**
-Graphenklasse. mehr gibts eig nicht zu sagen
- * @author Martin Appelmann 4685580 Group 2a 
+  * @author Martin Appelmann 4685580 Group 2a 
  * @author Benjamin Effner 4633079 Group 2a
 */
 public class Graph {
@@ -122,11 +121,11 @@ konstruktor fuer den graphen, braucht den dateinamen
 	methode fuer rekursiven aufruf
 	@param start ist der Vertex, von dem aus alle adjazenten Knoten geprueft werden
 	@param stillCheck ist die adjazentsliste der noch zu Pruefenden knoten, die aber schon angesteuert wurden
-	*eventuell ist stillCheck unnoetig*
-	@param checked ist eine liste mit allen bereits geprueften vertices
-	@return gibt in dieser version immer false zurueck, da der Rueckgabewert nicht mehr relevant ist. 
-	es wird die groesse von checked ueberprueft
-	*/
+	 * eventuell ist stillCheck unnoetig*
+	 * @param checked ist eine liste mit allen bereits geprueften vertices
+	 * @return gibt in dieser version immer false zurueck, da der Rueckgabewert nicht mehr relevant ist. 
+	 * es wird die groesse von checked ueberprueft
+	 */
     private boolean bfs(Vertex start, ArrayList<Vertex> stillCheck, ArrayList<Vertex> checked) {
     	stillCheck.add(start);
     	for (int i = 0; i < start.getAdjacent().size(); i++) {
@@ -139,9 +138,9 @@ konstruktor fuer den graphen, braucht den dateinamen
     	return false;
     }
     /**
-	Bubblesort algorithmus fuer die Kantenliste
-	Sortiert nach gewicht der Kante
-	*/
+	 * Bubblesort algorithmus fuer die Kantenliste
+	 * Sortiert nach gewicht der Kante
+	 */
     private void bubbleSort() {
         Edge temp;
         for (int i = 0; i < edges.size(); i++) {
