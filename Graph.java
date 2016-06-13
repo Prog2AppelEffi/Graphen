@@ -122,6 +122,7 @@ public class Graph {
 	@param start ist der Vertex, von dem aus alle adjazenten Knoten geprueft werden
 	@param stillCheck ist die adjazentsliste der noch zu Pruefenden knoten, die aber schon angesteuert wurden
 
+
 	 * eventuell ist stillCheck unnoetig*
 	 * @param checked ist eine liste mit allen bereits geprueften vertices
 	 * @return gibt in dieser version immer false zurueck, da der Rueckgabewert nicht mehr relevant ist. 
