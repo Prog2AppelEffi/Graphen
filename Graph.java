@@ -13,15 +13,15 @@ public class Graph {
 	private ArrayList<Edge> edges = new ArrayList<>();
 	private ArrayList<Vertex> vertices = new ArrayList<>();
 /**
-konstruktor fuer den graphen, braucht den dateinamen
-@param file der name der datei
+*konstruktor fuer den graphen, braucht den dateinamen
+*@param file der name der datei
 */
 	public Graph(String file) {
 		readGraph(file);
 	}
 	/**
-	liest die Textdatei ein und erzeugt einen graphen daraus
-	@param filename der name der datei
+*	liest die Textdatei ein und erzeugt einen graphen daraus
+*	@param filename der name der datei
 	*/
 	private void readGraph(String filename) {
         BufferedReader bufferedReader;
@@ -121,12 +121,14 @@ konstruktor fuer den graphen, braucht den dateinamen
 	methode fuer rekursiven aufruf
 	@param start ist der Vertex, von dem aus alle adjazenten Knoten geprueft werden
 	@param stillCheck ist die adjazentsliste der noch zu Pruefenden knoten, die aber schon angesteuert wurden
+
 	 * eventuell ist stillCheck unnoetig*
 	 * @param checked ist eine liste mit allen bereits geprueften vertices
 	 * @return gibt in dieser version immer false zurueck, da der Rueckgabewert nicht mehr relevant ist. 
 	 * es wird die groesse von checked ueberprueft
 	 */
     private boolean bfs(Vertex start, ArrayList<Vertex> stillCheck, ArrayList<Vertex> checked) {
+
     	stillCheck.add(start);
     	for (int i = 0; i < start.getAdjacent().size(); i++) {
     		if (!checked.contains(start.getAdjacent().get(i)) && !stillCheck.contains(start.getAdjacent().get(i))) {
@@ -135,7 +137,6 @@ konstruktor fuer den graphen, braucht den dateinamen
     	}
     	stillCheck.remove(start);
     	checked.add(start);
-    	return false;
     }
     /**
 	 * Bubblesort algorithmus fuer die Kantenliste
